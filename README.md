@@ -7,7 +7,8 @@ We're looking to simulate draws and mulligans (in which the first hand of cards 
 
 We’re going to simulate the activity in both Python and Go, and use the same performance benchmarks as our behavior simulation, Memory and Execution speed.
 
-Breakdown:
+# Breakdown
+
 The win condition is to deal 20 points of damage as quickly as possible.
 
 Each trial, the deck is shuffled (i.e. randomized), 7 cards are drawn from the top, and any mulligans can occur. A mulligan involves the deck being shuffled again, and one less card being drawn. So the first hand has 7 cards, the second has 6, the third has 5, and so on. Then, once any mulligans have finished, the player’s series of turns may commence. 
@@ -67,5 +68,6 @@ The deck could be described as a sequence of the following alphabetical characte
 AAAABBBBCCCCDDDDEEEEFFFFGGGGHHHHIIIIJJJJJJJJJJJJJJJJKKKKLLLL
 
 
-Example:
+# Example:
+
 Start by “shuffling” the deck: 
