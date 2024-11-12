@@ -17,8 +17,8 @@ Each turn, a player first draws a card, then may play a single land if they have
 The cards below are frequently accompanied by keywords and notations. 
 (#) indicates the number of cards of that type in the deck
 (L) indicates the alphabetical character key associated with that card
-# cost indicates how many lands are to be tapped to play the card
-# power indicates how much damage the creature can do per turn
+"# cost" indicates how many lands are to be tapped to play the card
+"# power" indicates how much damage the creature can do per turn
 Haste indicates that the creature can deal damage the first turn it is played
 Otherwise the creature can’t deal damage until the second turn it is played
 Prowess indicates that the creature gains 1 power until the end of the turn whenever a noncreature spell is cast.
