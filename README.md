@@ -1,8 +1,11 @@
 # MSDS-460-Monte-Carlo
-What’s being studied? Magic the Gathering - draws & plays to win a game with a limited number of cards.
-What are we comparing? Python vs Go again. 
 
+# What’s being studied?
+Magic the Gathering - draws & plays to win a game with a limited number of cards.
+# What are we comparing? 
+Python vs Go 
 
+# Summary
 We're looking to simulate draws and mulligans (in which the first hand of cards drawn is replaced in the deck and a new hand is drawn with one fewer card) in a trading card game deck, with different hands and draws resulting in different "turns to wins," based on a limited number of cards and interactions between them. This is based on an infamous deck in Magic the Gathering called Mono-Red Aggro, which has been studied somewhat extensively due to its relative ease of access and simple-but-effective ethos of winning the game before other competing decks can interact with it effectively. Succinctly put, it is a set of 60 cards which are intended to, as much as possible, remove variables from the game.
 
 We’re going to simulate the activity in both Python and Go, and use the same performance benchmarks as our behavior simulation, Memory and Execution speed.
