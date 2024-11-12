@@ -12,7 +12,7 @@ We’re going to simulate the activity in both Python and Go, and use the same p
 
 ## Breakdown
 
-The win condition is to deal 20 points of damage as quickly as possible.
+The win condition is to deal 20 points of damage as quickly as possible. Each turn will deal cumulative damage until 20 is reached, at which point the trial is concluded and the number of turns it took to deal that much damage is recorded. 
 
 Each trial, the deck is shuffled (i.e. randomized), 7 cards are drawn from the top, and any mulligans can occur. A mulligan involves the deck being shuffled again, and one less card being drawn. So the first hand has 7 cards, the second has 6, the third has 5, and so on. Then, once any mulligans have finished, the player’s series of turns may commence. 
 
