@@ -7,10 +7,10 @@ import (
 )
 
 type Card struct {
-	name   string
-	typ    string
-	cost   int
-	power  int
+	name    string
+	typ     string
+	cost    int
+	power   int
 	ability string
 }
 
@@ -94,7 +94,8 @@ func newDeck() *Deck {
 	return &Deck{cards: cards}
 }
 
-func simulateGame(deck *Deck) int {
+func simulateGame() int {
+	deck := newDeck()
 	deck.shuffle()
 	handSize := 7
 	hand := deck.drawHand(handSize)
@@ -106,15 +107,18 @@ func simulateGame(deck *Deck) int {
 		hand = deck.drawHand(handSize)
 	}
 
+	deck.cards = deck.cards[handSize:]
+
 	turns := 0
 	damage := 0
 	lands := 0
 	// keep turns going until damage hits 20
 	for damage < 20 {
 		turns++
-		if len(deck.cards) > handSize {
-			hand = append(hand, deck.cards[handSize])
-			handSize++
+		if len(deck.cards) > 0 {
+			drawnCard := deck.cards[0]
+			deck.cards = deck.cards[1:]
+			hand = append(hand, drawnCard)
 		}
 
 		// always play a land if available
@@ -182,16 +186,21 @@ func calculateDamage(hand []Card, lands int) int {
 }
 
 func main() {
-	rand.Seed(time.Now().UnixNano())
+	rand.New(rand.NewSource(0))
 	totalTurns := 0
-	deck := newDeck()
-	numTrials := 1000
+	trialSims := []int{1000, 10000, 100000}
 
-	for i := 0; i < numTrials; i++ {
-		turns := simulateGame(deck)
-		totalTurns += turns
+	for _, numTrials := range trialSims {
+		startTime := time.Now()
+		for i := 0; i < numTrials; i++ {
+			turns := simulateGame()
+			totalTurns += turns
+		}
+		avgTurns := float64(totalTurns) / float64(numTrials)
+		endTime := time.Now()
+		duration := endTime.Sub(startTime)
+		fmt.Printf("Number of Trials: %d\n", numTrials)
+		fmt.Printf("Average number of turns to win: %.2f\n", avgTurns)
+		fmt.Printf("Total execution time: %v\n", duration)
 	}
-
-	averageTurns := float64(totalTurns) / float64(numTrials)
-	fmt.Printf("Average number of turns to win: %.2f\n", averageTurns)
 }

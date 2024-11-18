@@ -1,0 +1,9 @@
+Number of trials: 1000
+Average number of turns to win: 3.28
+Total execution time: 0.03
+Number of trials: 10000
+Average number of turns to win: 3.62
+Total execution time: 0.28
+Number of trials: 100000
+Average number of turns to win: 3.64
+Total execution time: 2.71
